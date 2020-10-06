@@ -13,7 +13,7 @@ function buscarPeli(){
             type: "GET",
             success: function(data) {
 
-                var resultHtml = $("<div><p>Peliculas</p>");
+                var resultHtml = $("<div><h2>Resultado de busqueda:</h2>");
                 //for (i = 0; i < data["results"].length; i++) {
                 for (i = 0; i < tres; i++) {
 
@@ -21,7 +21,8 @@ function buscarPeli(){
                    
                     titulo = data["results"][i]["title"];
                     imagen = data["results"][i]["poster_path"];
-                    resultHtml.append("<div><p>" + titulo + "</p><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>")
+                    descripcion = data["results"][i]["overview"];
+                    resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h3>")
                     //resultHtml.append("<div><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>")
                 }
                 
