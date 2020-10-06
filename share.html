@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/estilos.css" />
+    <title>Movie App</title>
+</head>
+<body>
+
+    <div>
+        <header>
+            <h1>
+                Compartir con un amigo
+            </h1>
+        </header>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Películas </a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+
+        <div class="sharewithfriend">
+
+
+
+            <form action="javascript:share();">
+
+                <label>EmailA</label>
+                <input id="email" type="text" placeholder="Introduzca su Email">
+
+                <label>EmailB</label>
+                <input id="email" type="text" placeholder="Introduzca el Email de su amigo">
+
+                <label>Comentario</label>
+                <textarea rows="4" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea>
+
+                <button type="submit">Enviar</button>
+
+                <button type="button" onclick="cancelar()">Cancelar</button>
+
+
+
+
+            </form>
+
+        </div>
+
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/buscarPelicula.js"></script>
+    <script src="./assets/js/funciones.js"></script>
+
+</body>
+</html>

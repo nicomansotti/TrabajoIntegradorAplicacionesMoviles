@@ -21,7 +21,7 @@ h4 {
     color: white;
     font-size: 90%;
     display: block;
-    float: right;
+    float: left;
 }
 h5 {
     color: white;
@@ -59,13 +59,12 @@ ul {
 #peliculaBuscador{
     width: 50%;
     font-size: 1rem;
-    font-weight:50%;
 
 
 }
 #submit {
     color:white;
-    background-color: #4c328d;
+    background-color: #262ec3;
     font-size: 1rem;
     outline:none;
     min-height:10px;
@@ -75,6 +74,51 @@ ul {
     padding: 0.375rem 0.75rem;
     border-radius: 1.5rem;
 
+}
+
+#sharebutton {
+    color: white;
+    text-decoration:none;
+    background-color: #6c17c2;
+    font-size: 1rem;
+    outline: none;
+    min-height: 10px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+}
+
+#submit:hover{
+    background: #5d5bf7;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.sharewithfriend {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+label {
+    margin-top: 30%;
+}
+
+.margenTop {
+    margin-top: 1%;
+}
+
+footer .centro {
+    font-size: 12px;
 }
 
 

@@ -22,7 +22,7 @@ function buscarPeli(){
                     titulo = data["results"][i]["title"];
                     imagen = data["results"][i]["poster_path"];
                     descripcion = data["results"][i]["overview"];
-                    resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h3>")
+                    resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h3>" + "<a id=sharebutton href=share.html> compartir con un amigo </a>")
                     //resultHtml.append("<div><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>")
                 }
                 
