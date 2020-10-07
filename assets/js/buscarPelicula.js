@@ -1,3 +1,5 @@
+diez = 10;
+
 function buscarPeli(){
 
 
@@ -14,6 +16,10 @@ function buscarPeli(){
 
 
              
+                $('#peliculaBuscador').change(function(){
+                    diez = 10;
+                });
+
                 
 
                 var buscarMas = $("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar más resultados</button>");
@@ -21,7 +27,7 @@ function buscarPeli(){
 
                 
 
-                for (i = 0; i < data["results"].length; i++) {
+                for (i = 0; i < diez; i++) {
 
                     titulo = data["results"][i]["title"];
                     imagen = data["results"][i]["poster_path"];
@@ -32,6 +38,12 @@ function buscarPeli(){
    
                 }
 
+
+                
+                diez = data["results"].length;
+
+                
+  
                 resultHtml.append("</div>");
                 buscarMas.append("</div>");
                 $("#movies").html(resultHtml);

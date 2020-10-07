@@ -4,9 +4,6 @@ permitiendo obtener resultados cada vez más específicos.
 Para ello, se debe presentar al usuario un campo por cada filtro utilizado y un botón que al
 presionarlo permita lanzar la búsqueda y recuperar la información.
 
- Una vez obtenida la respuesta, se debe mostrar al usuario los 10 primeros resultados (si es que los
-hay). Pero se debe poder acceder a los demás, si los resultados de búsqueda son extensos.
-
  Cada uno de los resultados debe mostrar información específica asociada a la temática (la cual debe
 ser acordada con el docente), junto con un botón que sugiera “Compartir con un amigo”.
 
