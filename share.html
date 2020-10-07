@@ -26,35 +26,38 @@
 
     <main>
 
+       
         <div class="sharewithfriend">
 
 
-            <form action="javascript:share();">
+            <form>
 
-                <label>EmailA</label>
-                <input id="email" type="text" placeholder="Introduzca su Email">
+                
+                <div id="compartirAmigoo"></div>
 
-                <label>EmailB</label>
-                <input id="emailb" type="text" placeholder="Introduzca el Email de su amigo">
-
-                <label>Comentario</label>
-                <textarea rows="4" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea>
-
-                <button id="emailLink" type="submit">Enviar</button>
-
+                <button onclick="emailLink()" id="emailLink" type="submit">Enviar</button>
+                
                 <button type="button" onclick="cancelar()">Cancelar</button>
-
-
-
 
             </form>
 
         </div>
 
+ <!--
+        <div class="container">
+            <div id="compartirAmigoo"></div>
+          </div>
+-->
+
+
     </main>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/buscarPelicula.js"></script>
     <script src="./assets/js/funciones.js"></script>
+    <script type="text/javascript">
+      llenarCamposMail();
+    </script>
 
 </body>
 </html>
