@@ -29,7 +29,7 @@ function buscarPeli(){
 
                 
 
-                var buscarMas = $("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar más resultados</button>");
+                var buscarMas = $("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar todos los resultados</button>");
                 var resultHtml = $("<div><h2>Resultado de busqueda:</h2>");
 
                 
