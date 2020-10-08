@@ -18,7 +18,14 @@ function buscarPeli(){
              
                 $('#peliculaBuscador').change(function(){
                     diez = 10;
+                    $('#buscarMas').show();
+                  
+                    
                 });
+
+                if (diez !== 10){
+                    $('#buscarMas').hide();
+                }
 
                 
 
