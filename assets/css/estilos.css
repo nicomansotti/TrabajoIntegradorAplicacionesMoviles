@@ -122,6 +122,26 @@ footer .centro {
     font-size: 12px;
 }
 
+.about {
+   
+    display:block;
+}
+
+.about h2 {
+    font-size: 30px;
+}
+
+.about h4{
+    font-size: 20px;
+    position:center;
+    margin:2%;
+}
+
+#myMap {
+    height: 250px;
+    margin: 10%;
+    display:block;
+}
 
 
 

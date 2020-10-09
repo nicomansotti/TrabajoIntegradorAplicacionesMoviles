@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./assets/css/estilos.css" />
     <title>Movie App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="" />
 </head>
 <body>
 
@@ -23,9 +26,21 @@
         </ul>
     </nav>
 
+    <main>
+        <div class="about">
+            <h2>Somos un grupo de personas que ofrecen soluciones web!</h2>
+            <h4>Encontranos en Calle 14, B1900 La Plata, Provincia de Buenos Aires, Argentina</h4>
+            
+        </div>
+        <div id="myMap"></div>
+
+    </main>
 
 
- 
-
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script> 
+    <script src="./assets/js/mapa.js"></script>
 </body>
 </html>
