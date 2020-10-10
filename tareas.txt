@@ -4,26 +4,8 @@ permitiendo obtener resultados cada vez más específicos.
 Para ello, se debe presentar al usuario un campo por cada filtro utilizado y un botón que al
 presionarlo permita lanzar la búsqueda y recuperar la información.
 
- Cada uno de los resultados debe mostrar información específica asociada a la temática (la cual debe
-ser acordada con el docente), junto con un botón que sugiera “Compartir con un amigo”.
-
- Al hacer click sobre el botón Compartir con un amigo se debe redireccionar al usuario a una nueva
-página que permita efectuar de envío de los datos mostrados en el resultado a un amigo. En dicha
-página, se mostrará un formulario con los siguientes campos:
- Datos correspondientes al resultado compartido (autocompletado y requerido).
- Correo emisor (requerido).
- Correo destino (requerido).
- Mensaje abierto al destinatario (opcional).
- Botón Enviar mail.
- Botón Cancelar.
-Una vez que se efectúa el submit del formulario, si la validación de los campos es exitosa, se debe
-abrir el gestor de correo asociado al navegador del usuario, con el email listo para ser enviado.
-
  El usuario debe poder visualizar las últimas búsquedas realizadas. Dando la posibilidad de
-relanzarlas automáticamente. //YA LO HACE AUTOMATICAMENTE(GUARDA EL NOMBRE DE LA PELICULA)
-
- Se debe poder acceder a una nueva página de contacto con los datos básicos del desarrollador del
-sitio web. Entre ellos, se debe mostrar la ubicación de la oficina en un mapa.
+relanzarlas automáticamente.
 
  El diseño responsivo se debe realizar sólo sobre la página de búsqueda de la aplicación.
 Permitiendo mostrar los resultados en diferentes formas de acuerdo al dispositivo desde el cual se
@@ -32,12 +14,7 @@ una Tablet 2 o más, mientras que para la versión Desktop se deben mostrar 3 o 
 
  Utilizar como mínimo tres filtros para acotar los resultados de búsqueda.
 
- La ubicación de la oficina será exactamente la catedral de La Plata. La misma debe ser mostrada
-en un mapa utilizando la API de Geolocalización vista en las teorías.
-
  Diseñar la aplicación mediante el modelo Mobile First.
-
- Realizar las validaciones de datos cuando corresponda.
 
  Queda a criterio del alumno incorporar funcionalidad extra al sitio web, incorporar efectos y
 animaciones sobre los elementos.

@@ -1,15 +1,31 @@
-diez = 10;
-
 function buscarPeli(){
 
 
     peliculaBuscador = document.getElementById('peliculaBuscador').value ;
 
+    añoPeli = document.getElementById('añoPeli').value ;
+
+
+    var urlPeli;
+
+    if(añoPeli === "Elegir..."){
+        urlPeli = "https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&query="+peliculaBuscador
+    }
+
+    if(añoPeli !== "Elegir..."){
+        urlPeli = "https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&query="+peliculaBuscador+"&year="+añoPeli
+    }
+
+
+
         $.ajax({
-            url: "https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&query="+peliculaBuscador ,
+            url: urlPeli,//"https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&query="+peliculaBuscador ,
             contentType: "application/json",
             type: "GET",
             success: function(data) {
+
+                console.log(data);
+                console.log(urlPeli);
 
                 $('#buscarMas').empty();
                 $('#movies').empty();
@@ -17,16 +33,17 @@ function buscarPeli(){
 
              
                 $('#peliculaBuscador').change(function(){
-                    diez = 10;
+
                     $('#buscarMas').show();
                   
                     
                 });
 
+                /*
                 if (diez !== 10){
                     $('#buscarMas').hide();
                 }
-
+                */
                 
 
                 var buscarMas = $("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar todos los resultados</button>");
@@ -34,20 +51,36 @@ function buscarPeli(){
 
                 
 
-                for (i = 0; i < diez; i++) {
+                for (i = 0; i <  data["results"].length; i++) {
 
                     titulo = data["results"][i]["title"];
                     imagen = data["results"][i]["poster_path"];
                     descripcion = data["results"][i]["overview"];
-                    id = data["results"][i]["id"];            
+                    año = data["results"][i]["release_date"];
+                    //año = año.substring(0, 4);
+                    id = data["results"][i]["id"];           
+
+
+                    resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h4>" + "<h4>Fecha de lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
                     
-                    resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h3>" +  "<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
-   
+                    /*
+                    if (añoPeli !== "Elegir..."){
+                        if (año === añoPeli){
+                        resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h4>" + "<h4>Fecha lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
+                        }
+                    }
+
+                    else if(añoPeli === "Elegir..."){
+                        resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h4>" + "<h4>Fecha lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
+                    }
+
+                    */
+                    
                 }
 
 
                 
-                diez = data["results"].length;
+
 
                 
   
@@ -60,6 +93,7 @@ function buscarPeli(){
             },
             error: function(err) {
                 alert(JSON.stringify(err));
+                //alert("Ingresar una película");
             }
         });
 
@@ -71,15 +105,18 @@ function buscarPeli(){
 
 //funcion email
 
-$(function () {
-    $('#emailLink').on('click', function (event) {
-        event.preventDefault();
+function enviarMaiil() {
+
+    if (validacion() == true){    
+
       var email = $('#emailb').val();
       var subject = $('#subject').val();
       var emailBody = $('#comentario').val(); 
       window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
-    });
-  });
+
+    }
+
+  };
 
 
 
@@ -163,8 +200,11 @@ function mandarAmigo(id){
      
       //let output = '<div>Popularidad: '+popularity+'</div><div>Puntaje: '+vote_average+'</div>'+'</div><div>Sinapsis: '+descripcion+'</div>';
 
+      //manda la info en el comentario 
+      //let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario...">Popularidad: '+popularity+'\n \nPuntaje: '+vote_average+'\n \nSinapsis: '+descripcion+'\n \nMira esta peli!!!</textarea>'
 
-      let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario...">Popularidad: '+popularity+'\n \nPuntaje: '+vote_average+'\n \nSinapsis: '+descripcion+'\n \nMira esta peli!!!</textarea>'
+      //no manda la info en el comentario. lo manda en el asunto
+      let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea>'
 
       //document.getElementById('subject').value = "Popularidad: "+popularity+" - Puntaje: "+vote_average+" - Sinapsis: "+descripcion;
 
