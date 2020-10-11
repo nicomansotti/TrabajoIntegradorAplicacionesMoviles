@@ -1,11 +1,9 @@
 function buscarPeli(){
 
-
     peliculaBuscador = document.getElementById('peliculaBuscador').value ;
-
     añoPeli = document.getElementById('añoPeli').value ;
-
-
+    puntaje = document.getElementById('puntaje').value;
+    genero = document.getElementById('genero').value;
     var urlPeli;
 
     if(añoPeli === "Elegir..."){
@@ -16,73 +14,78 @@ function buscarPeli(){
         urlPeli = "https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&query="+peliculaBuscador+"&year="+añoPeli
     }
 
+    $.ajax({
+    url: urlPeli,//"https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&query="+peliculaBuscador ,
+    contentType: "application/json",
+    type: "GET",
+    success: function(data) {
+
+        
+
+        if(data["results"] == []){
+            alert("[ERROR] No se encontraron resultados");
+        }
 
 
-        $.ajax({
-            url: urlPeli,//"https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&query="+peliculaBuscador ,
-            contentType: "application/json",
-            type: "GET",
-            success: function(data) {
 
-                console.log(data);
-                console.log(urlPeli);
-
-                $('#buscarMas').empty();
-                $('#movies').empty();
+        $('#buscarMas').empty();
+        $('#movies').empty();
 
 
-             
-                $('#peliculaBuscador').change(function(){
+        
+        $('#peliculaBuscador').change(function(){
 
-                    $('#buscarMas').show();
-                  
-                    
-                });
+            $('#buscarMas').show();
+            
+            
+        });
+        
 
-                /*
-                if (diez !== 10){
-                    $('#buscarMas').hide();
-                }
-                */
-                
-
-                var buscarMas = $("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar todos los resultados</button>");
-                var resultHtml = $("<div><h2>Resultado de busqueda:</h2>");
-
-                
-
-                for (i = 0; i <  data["results"].length; i++) {
-
-                    titulo = data["results"][i]["title"];
-                    imagen = data["results"][i]["poster_path"];
-                    descripcion = data["results"][i]["overview"];
-                    año = data["results"][i]["release_date"];
-                    //año = año.substring(0, 4);
-                    id = data["results"][i]["id"];           
+        var buscarMas = $("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar todos los resultados</button>");
+        var resultHtml = $("<div><h2>Resultado de busqueda:</h2>");
 
 
-                    resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h4>" + "<h4>Fecha de lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
-                    
-                    /*
-                    if (añoPeli !== "Elegir..."){
-                        if (año === añoPeli){
-                        resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h4>" + "<h4>Fecha lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
-                        }
+        for (i = 0; i <  data["results"].length; i++) {
+
+            titulo = data["results"][i]["title"];
+            imagen = data["results"][i]["poster_path"];
+            año = data["results"][i]["release_date"];
+            id = data["results"][i]["id"];        
+            puntuacion = data["results"][i]["vote_average"];
+            generito = data["results"][i]["genre_ids"];
+            generito = generito.toString();
+
+
+
+            //ELIGE PUNTAJE Y GENERO
+            if (puntaje !== "Elegir..." && genero !== "Elegir..."){
+                if (puntaje <= puntuacion){
+                    if(generito.includes(genero)){
+                        resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>Puntuación: " + puntuacion + "</h4>"+/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
                     }
-
-                    else if(añoPeli === "Elegir..."){
-                        resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>" + descripcion + "</h4>" + "<h4>Fecha lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
-                    }
-
-                    */
-                    
                 }
+            }
 
+            //ELIGE PUNTAJE
+            if (puntaje !== "Elegir..." && genero === "Elegir..."){
+                if (puntaje <= puntuacion){
+                resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>Puntuación: " + puntuacion + "</h4>"+/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
+                }
+            }
 
-                
+            //ELIGE GENERO
+            if(genero !== "Elegir..." && puntaje === "Elegir..."){
+                if(generito.includes(genero)){
+                    resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>Puntuación: " + puntuacion + "</h4>"+/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
+                } 
+            }
 
+            //NO ELIGE NINGUNO
+            if(puntaje === "Elegir..." && genero === "Elegir..."){
+                resultHtml.append("<div><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'></div>" + "<h4>Puntuación: " + puntuacion + "</h4>"+/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" +"<a id='sharebutton' onclick='movieSelected("+id+")' href='#'>Movie Details</a><div><a onclick='mandarAmigo("+id+")' href='#'> Compartir con un amigo </a></div>")
+            }
 
-                
+            }
   
                 resultHtml.append("</div>");
                 buscarMas.append("</div>");
@@ -92,8 +95,12 @@ function buscarPeli(){
 
             },
             error: function(err) {
-                alert(JSON.stringify(err));
-                //alert("Ingresar una película");
+                if(peliculaBuscador === ""){
+                    alert("[ERROR] Ingresar una película");
+                }
+                else{
+                alert("[ERROR] No se encontraron resultados");
+                }
             }
         });
 
@@ -150,11 +157,47 @@ function mandarAmigo(id){
                 titulo = data["title"];
                 vote_average = data["vote_average"];
                 lanzamiento = data["release_date"];
+                imagen = data["poster_path"];
+                descripcion = data["overview"]
+                idiomaOriginal = data["original_language"]
+                
+
+                
+                var generos = [];
+                for (let i = 0; i < data["genres"].length; i++) {
+                    generos.push(data["genres"][i]["name"])                   
+                }
+                generos = generos.join(", ");
+                var x = generos.toString();
+                document.getElementById("demo").innerHTML = "Generos: "+ x;
+
+
+
+
+                var productoras = [];
+                for (let i = 0; i < data["production_companies"].length; i++) {
+                    productoras.push(data["production_companies"][i]["name"])                   
+                }
+                productoras = productoras.join(", ");
+                var x = productoras.toString();
+                document.getElementById("productoras").innerHTML = "Productoras: "+ x;
+
+
+
+                var idiomas = [];
+                for (let i = 0; i < data["spoken_languages"].length; i++) {
+                    idiomas.push(data["spoken_languages"][i]["name"])                   
+                }
+                idiomas = idiomas.join(", ");
+                var x = idiomas.toString();
+                document.getElementById("idiomas").innerHTML = "Idiomas: "+ x;
                 
 
 
+
+                
      
-      let output = '<div>Titulo: '+titulo+'</div><div>Puntaje: '+vote_average+'</div>'+'</div><div>Lanzamiento: '+lanzamiento+'</div>';
+      let output = '<h1>'+titulo+'</h1><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div>Descripción: '+descripcion+'</div><br><div>Puntaje: '+vote_average+'</div><br><div>Lanzamiento: '+lanzamiento+'</div><br><div>Idioma original: '+idiomaOriginal+'</div>';
       
     
 
