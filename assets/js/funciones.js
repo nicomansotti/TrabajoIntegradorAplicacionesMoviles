@@ -11,31 +11,64 @@ function cancelar() {
 function validacion() {
   if (document.getElementById('email').value == "") {
     // Si no se cumple la condicion...
-    alert('[ERROR] El campo "Mail suyo" debe tener un valor');
+    document.querySelector('.alert').style.display = 'block' ;
+    document.getElementById('mailcito').innerHTML = "Mail suyo debe tener un valor"
+    setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none' ;
+    },3000);
+    
+    //alert('[ERROR] El campo "Mail suyo" debe tener un valor');
     return false;
   }
 
+
   else if (document.getElementById('emailb').value == "") {
     // Si no se cumple la condicion...
-    alert('[ERROR] El campo "Mail de Amigo" debe tener un valor');
+
+    document.querySelector('.alert').style.display = 'block' ;
+    document.getElementById('mailcito').innerHTML = "Mail de amigo debe tener un valor"
+    setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none' ;
+    },3000);
+
+    //alert('[ERROR] El campo "Mail de Amigo" debe tener un valor');
     return false;
   }
 
   else if (document.getElementById('subject').value === "" ) {
     // Si no se cumple la condicion...
-    alert('[ERROR] El campo "Asunto" debe tener un valor');
+
+    document.querySelector('.alert').style.display = 'block' ;
+    document.getElementById('mailcito').innerHTML = "Asunto debe tener un valor"
+    setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none' ;
+    },3000);
+
+    //alert('[ERROR] El campo "Asunto" debe tener un valor');
     return false;
   }
 
   else if (validateEmail(document.getElementById('email').value) != true ) {
     // Si no se cumple la condicion...
-    alert('[ERROR] Ingresar correctamente su email');
+    document.querySelector('.alert').style.display = 'block' ;
+    document.getElementById('mailcito').innerHTML = "Ingresar correctamente su email"
+    setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none' ;
+    },3000);
+
+    //alert('[ERROR] Ingresar correctamente su email');
     return false;
   }
 
   else if (validateEmail(document.getElementById('emailb').value) != true ) {
     // Si no se cumple la condicion...
-    alert('[ERROR] Ingresar correctamente el email de su amigo');
+    document.querySelector('.alert').style.display = 'block' ;
+    document.getElementById('mailcito').innerHTML = "Ingresar correctamente el email de su amigo"
+    setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none' ;
+    },3000);
+    
+    //alert('[ERROR] Ingresar correctamente el email de su amigo');
     return false;
   }
 

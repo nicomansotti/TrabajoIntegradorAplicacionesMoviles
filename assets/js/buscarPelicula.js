@@ -55,6 +55,10 @@ function buscarPeli(){
             generito = data["results"][i]["genre_ids"];
             generito = generito.toString();
 
+            if (año === ""){
+                año = "A estrenar";
+            }
+
 
 
             //ELIGE PUNTAJE Y GENERO
@@ -96,15 +100,34 @@ function buscarPeli(){
             },
             error: function(err) {
                 if(peliculaBuscador === ""){
-                    alert("[ERROR] Ingresar una película");
+                    //document.getElementById('mensajito').innerHTML = "Ingresar una película";
+                    //alert("[ERROR] Ingresar una película");
+                    document.querySelector('.alert').style.display = 'block' ;
+                    document.getElementById('mensajito').innerHTML = "Ingresar una película"
+                   
+                    setTimeout(function(){
+                        document.querySelector('.alert').style.display = 'none' ;
+                    },3000);
                 }
                 else{
-                alert("[ERROR] No se encontraron resultados");
+                    document.querySelector('.alert').style.display = 'block' ;
+                    document.getElementById('mensajito').innerHTML = "No se encontraron resultados";
+
+                    setTimeout(function(){
+                        document.querySelector('.alert').style.display = 'none' ;
+                    },3000);
+                    //document.getElementById('mensajito').innerHTML = "No se encontraron resultados";
+                    //alert("[ERROR] No se encontraron resultados");
                 }
             }
         });
 
 }
+
+
+
+
+
 
 
 
@@ -247,7 +270,7 @@ function mandarAmigo(id){
       //let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario...">Popularidad: '+popularity+'\n \nPuntaje: '+vote_average+'\n \nSinapsis: '+descripcion+'\n \nMira esta peli!!!</textarea>'
 
       //no manda la info en el comentario. lo manda en el asunto
-      let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><div><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea></div>'
+      let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" readonly value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><div><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea></div>'
 
       //document.getElementById('subject').value = "Popularidad: "+popularity+" - Puntaje: "+vote_average+" - Sinapsis: "+descripcion;
 
