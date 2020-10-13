@@ -1,35 +1,55 @@
-body{
-    background-color:black;
-    color:white;
+* {
+    margin: 1;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-h1{
-    color:white;
-    font-size: 250%;
-}
-h2 {
+body {
+    background-color: black;
     color: white;
-    font-size: 100%;
-    margin: 10px;
-    padding: 10px;
-    margin-bottom:10px;
+    display: grid;
+
 }
-h3 {
-    color: white;
-    font-size: 180%;
+.content-cabecera {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    margin:10px;
+
 }
-h4 {
-    color: white;
-    font-size: 90%;
-    display: block;
-    float: left;
+
+.content-logo {
+    background-color: #262ec3;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    margin: auto;
 }
-h5 {
-    color: white;
+
+    .content-logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+.content-cabecera h1{
+    color: blue;
+    margin-top: 20px;
+    font-size:200px;
 }
+
+.content-cabecera p {
+    margin-top: 80px;
+    text-align: center;
+}
+
 
 nav {
-    grid-area: nav;
+   
+    margin-top: 10px;
+
     background-color: #282727;
     font-family: Calibri;
 }
@@ -42,7 +62,7 @@ ul {
 }
 
     ul li {
-        float: right;
+        float: left;
         margin-left: 1%;
     }
 
@@ -57,45 +77,12 @@ ul {
                 background: #3c3a3a;
             }
 
-#peliculaBuscador{
-    width: 50%;
-    font-size: 1rem;
-
-
-}
-#submit {
-    color:white;
-    background-color: #262ec3;
-    font-size: 1rem;
-    outline:none;
-    min-height:10px;
-    font-weight:400;
-    text-align:center;
-    line-height: 1.5;
-    padding: 0.375rem 0.75rem;
-    border-radius: 1.5rem;
-
-}
-
-#sharebutton {
-    color: white;
-    text-decoration:none;
-    background-color: #6c17c2;
-    font-size: 1rem;
-    outline: none;
-    min-height: 10px;
-    font-weight: 400;
-    text-align: center;
-    line-height: 1.5;
-    padding: 0.375rem 0.75rem;
-}
-
-#submit:hover{
-    background: #5d5bf7;
-}
-
-input, textarea {
+.buscador {
     width: 100%;
+}
+
+input, select {
+    width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
@@ -105,15 +92,104 @@ input, textarea {
 }
 
 
+#peliculaBuscador {
+    width: 90%;
+    font-size: 1rem;
+}
+
+
+#submit {
+    color: white;
+    background-color: #262ec3;
+    font-size: 1rem;
+    outline: none;
+    min-height: 10px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    border-radius: 1.5rem;
+    float: right;
+    margin-right:10%;
+}
+
+
+    #submit:hover {
+        background: #5d5bf7;
+    }
+
+
+/*resultado de busqueda*/
+
+.container {
+    background-color:#161616;
+    width: 100%;
+    margin: 10px;
+    padding:5px;
+    border-radius: 10px;
+
+}
+
+.colum {
+    position: static;
+    padding: 10px;
+    float: left;
+    width: 80%;
+    margin: 0,5%;
+    background-color:black;
+    border: 2px;
+    border-radius: 10px;
+}
+
+.colum img{
+    width: 70%;
+    height: 80%;
+}
+
+.colum h3 {
+    background-color:red;
+    font-size: 100%;
+    width:70%;
+}
+.colum h4 {
+ margin-top:10px;
+float: unset;
+font-size: 60%;
+}
+
+
+#sharebutton {
+    position: page;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: #6c17c2;
+    font-size: 1rem;
+    outline: none;
+    min-height: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    float: left;
+}
+
+    #sharebutton:hover {
+        background: #5d5bf7;
+    }
+
 .sharewithfriend {
     margin-left: 30%;
     margin-right: 30%;
 }
 
-label {
-    margin-top: 30%;
+#buscarMas{
+    margin-top:20px;
+    position: static;
+    float:right;
+    
 }
 
+/*----------------------------------------*/
 .margenTop {
     margin-top: 1%;
 }
@@ -123,50 +199,173 @@ footer .centro {
 }
 
 .about {
-   
-    display:block;
+    display: block;
 }
 
-.about h2 {
-    font-size: 30px;
-}
+    .about h2 {
+        font-size: 30px;
+    }
 
-.about h4{
-    font-size: 20px;
-    position:center;
-    margin:2%;
-}
+    .about h4 {
+        font-size: 20px;
+        position: center;
+        margin: 2%;
+    }
 
 #myMap {
     height: 250px;
+    width:80%;
     margin: 10%;
-    display:block;
+    display: block;
+}
+
+
+@media (min-width:480px) { /* smartphones, Android phones, landscape iPhone */
+    .colum {
+        width: 50%;
+    }
+
+
+        .colum img {
+            width: 70%;
+            height: 80%;
+        }
+
+
+
+    .content-logo {
+        width: 15%;
+        height: 15%;
+        float: right;
+        margin-right:20px;
+    }
+
+ 
+}
+
+@media (min-width:768px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+
+    .content-logo {
+        width: 10%;
+        height: 10%;
+    }
+    .colum {
+        width: 33.33333333%;
+    }
+        .colum img {
+            width: 70%;
+            height: 80%;
+        }
+
+        .colum h2 {
+            font-size: 180%;
+            width: 100%;
+        }
+
+        .colum h3 {
+            background-color: red;
+            font-size: 150%;
+            width: 80%;
+        }
+
+        .colum h4 {
+            margin-top: 10px;
+            float: unset;
+            font-size: 120%;
+        }
+
+
+    #sharebutton {
+        font-size: 1.5rem;
+       
+    }
+
+
+
 }
 
 
 
-    @media (min-width:320px) { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+
+    .content-logo {
+        width: 7%;
+        height: 7%;
+        
+    }
+    .colum {
+        width: 25%;
     }
 
-    @media (min-width:480px) { /* smartphones, Android phones, landscape iPhone */
+
+        .colum img {
+            width: 80%;
+            height: 90%;
+        }
+
+        .colum h2 {
+            font-size: 220%;
+            width: 100%;
+        }
+
+        .colum h3 {
+            background-color: red;
+            font-size: 200%;
+            width: 80%;
+        }
+
+        .colum h4 {
+            margin-top: 10px;
+            float: unset;
+            font-size: 150%;
+        }
 
 
+    #sharebutton {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+@media (min-width:1200px) { /* hi-res laptops and desktops */
+
+    .colum {
+        width: 20%;
     }
 
-    @media (min-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 
+        .colum img {
+            width: 90%;
+            height: 100%;
+        }
+        .colum:hover {
+            margin-left: 0 80px;
+            transform: scale(1.2);
+        }
+
+
+    .colum h2 {
+        font-size: 220%;
+        width: 100%;
     }
 
-    @media (min-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */
+        .colum h3 {
+            background-color: red;
+            font-size: 200%;
+            width: 80%;
+        }
 
+        .colum h4 {
+            margin-top: 10px;
+            float: unset;
+            font-size: 150%;
+        }
+
+
+    #sharebutton {
+        font-size: 2rem;
     }
 
-    @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
-
-    }
-
-    @media (min-width:1281px) { /* hi-res laptops and desktops */
-
-
-    }
+}

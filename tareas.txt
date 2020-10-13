@@ -9,12 +9,5 @@ relanzarlas automáticamente.
 
 //DISEÑO
 
- El diseño responsivo se debe realizar sólo sobre la página de búsqueda de la aplicación.
-Permitiendo mostrar los resultados en diferentes formas de acuerdo al dispositivo desde el cual se
-está accediendo. En un celular, se podrán visualizar 1 o 2 resultados por línea al mismo tiempo, en
-una Tablet 2 o más, mientras que para la versión Desktop se deben mostrar 3 o más por línea.
-
- Diseñar la aplicación mediante el modelo Mobile First.
-
  Queda a criterio del alumno incorporar funcionalidad extra al sitio web, incorporar efectos y
 animaciones sobre los elementos.
