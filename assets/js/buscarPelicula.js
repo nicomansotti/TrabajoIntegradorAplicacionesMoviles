@@ -61,7 +61,7 @@ function buscarPeli(){
             if (puntaje !== "Elegir..." && genero !== "Elegir..."){
                 if (puntaje <= puntuacion){
                     if(generito.includes(genero)){
-                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Movie Details</a><a id='sharebutton' onclick='mandarAmigo(" + id + ")' href='#'> Compartir con un amigo </a></div >")
+                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebutton' onclick='mandarAmigo(" + id + ")' href='#'> Compartir con un amigo </a></div >")
                     }
                 }
             }
@@ -69,20 +69,20 @@ function buscarPeli(){
             //ELIGE PUNTAJE
             if (puntaje !== "Elegir..." && genero === "Elegir..."){
                 if (puntaje <= puntuacion){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Movie Details</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
+                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
                 }
             }
 
             //ELIGE GENERO
             if(genero !== "Elegir..." && puntaje === "Elegir..."){
                 if(generito.includes(genero)){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Movie Details</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
+                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
                 } 
             }
 
             //NO ELIGE NINGUNO
             if(puntaje === "Elegir..." && genero === "Elegir..."){
-                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Movie Details</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
+                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
             }
 
             }
@@ -247,7 +247,7 @@ function mandarAmigo(id){
       //let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario...">Popularidad: '+popularity+'\n \nPuntaje: '+vote_average+'\n \nSinapsis: '+descripcion+'\n \nMira esta peli!!!</textarea>'
 
       //no manda la info en el comentario. lo manda en el asunto
-      let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea>'
+      let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><div><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea></div>'
 
       //document.getElementById('subject').value = "Popularidad: "+popularity+" - Puntaje: "+vote_average+" - Sinapsis: "+descripcion;
 

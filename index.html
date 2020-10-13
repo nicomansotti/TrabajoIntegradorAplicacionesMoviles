@@ -31,8 +31,12 @@
     <div class="buscador">
         <form action="javascript:buscarPeli();">
 
+            <label id="margenPeli">Película</label>
             <input type="text" id="peliculaBuscador">
-            <button id="submit" type="submit">Buscar</button>
+
+            <button id="botonFiltro" type="button" onclick="mostrarFiltros()">Ver filtros</button>
+
+            <div style="display: none;" id="filtros">
 
             <label id="yearFilm">Año Pelicula</label>
             <select name="añoPeli" id="añoPeli">
@@ -83,9 +87,10 @@
                 <option value=27>Terror</option>
             </select>
 
+        </div>
 
-
-
+            <button id="submit" type="submit">Buscar</button>
+            
         </form>
     </div>
     <main>

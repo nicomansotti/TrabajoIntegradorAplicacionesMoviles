@@ -98,6 +98,27 @@ input, select {
 }
 
 
+#botonFiltro{
+    color: white;
+    background-color: #262ec3;
+    font-size: 1rem;
+    outline: none;
+    min-height: 10px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    border-radius: 1.5rem;
+    float: left;
+    margin-right:0.5%;
+}
+
+#botonFiltro:hover {
+    background: #5d5bf7;
+}
+
+
+
 #submit {
     color: white;
     background-color: #262ec3;
@@ -109,7 +130,7 @@ input, select {
     line-height: 1.5;
     padding: 0.375rem 0.75rem;
     border-radius: 1.5rem;
-    float: right;
+    float: left;
     margin-right:10%;
 }
 
@@ -238,6 +259,10 @@ footer .centro {
         height: 15%;
         float: right;
         margin-right:20px;
+    }
+
+    #margenPeli{
+        margin-top: 55%;
     }
 
  
