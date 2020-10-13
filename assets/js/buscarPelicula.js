@@ -61,7 +61,7 @@ function buscarPeli(){
             if (puntaje !== "Elegir..." && genero !== "Elegir..."){
                 if (puntaje <= puntuacion){
                     if(generito.includes(genero)){
-                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebutton' onclick='mandarAmigo(" + id + ")' href='#'> Compartir con un amigo </a></div >")
+                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebuttonn' onclick='mandarAmigo(" + id + ")' href='#'> Compartir con un amigo </a></div >")
                     }
                 }
             }
@@ -69,20 +69,20 @@ function buscarPeli(){
             //ELIGE PUNTAJE
             if (puntaje !== "Elegir..." && genero === "Elegir..."){
                 if (puntaje <= puntuacion){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
+                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
                 }
             }
 
             //ELIGE GENERO
             if(genero !== "Elegir..." && puntaje === "Elegir..."){
                 if(generito.includes(genero)){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
+                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
                 } 
             }
 
             //NO ELIGE NINGUNO
             if(puntaje === "Elegir..." && genero === "Elegir..."){
-                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebutton' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
+                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles de la película</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir con un amigo </a></div>")
             }
 
             }
