@@ -6,6 +6,8 @@ presionarlo permita lanzar la búsqueda y recuperar la información.
  El usuario debe poder visualizar las últimas búsquedas realizadas. Dando la posibilidad de
 relanzarlas automáticamente.
 
+ Una vez obtenida la respuesta, se debe mostrar al usuario los 10 primeros resultados (si es que los
+hay). Pero se debe poder acceder a los demás, si los resultados de búsqueda son extensos.
 
 //DISEÑO
 
