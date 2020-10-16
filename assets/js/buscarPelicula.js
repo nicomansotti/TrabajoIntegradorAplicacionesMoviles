@@ -59,13 +59,15 @@ function buscarPeli(){
                 año = "A estrenar";
             }
 
-
+            //#########################################################################
+             //si no tiene imagen
+             if (imagen == null){
 
             //ELIGE PUNTAJE Y GENERO
             if (puntaje !== "Elegir..." && genero !== "Elegir..."){
                 if (puntaje <= puntuacion){
                     if(generito.includes(genero)){
-                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id + ")' href='#'> Compartir </a></div >")
+                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                     }
                 }
             }
@@ -73,21 +75,59 @@ function buscarPeli(){
             //ELIGE PUNTAJE
             if (puntaje !== "Elegir..." && genero === "Elegir..."){
                 if (puntaje <= puntuacion){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div>")
+                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                 }
             }
 
             //ELIGE GENERO
             if(genero !== "Elegir..." && puntaje === "Elegir..."){
                 if(generito.includes(genero)){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div>")
+                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                 } 
             }
 
             //NO ELIGE NINGUNO
             if(puntaje === "Elegir..." && genero === "Elegir..."){
-                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + ")' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div>")
+                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
             }
+            }
+
+
+
+            //#########################################################################
+            //si tiene imagen
+            if (imagen != null){
+                //ELIGE PUNTAJE Y GENERO
+            if (puntaje !== "Elegir..." && genero !== "Elegir..."){
+                if (puntaje <= puntuacion){
+                    if(generito.includes(genero)){
+                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                    }
+                }
+            }
+
+            //ELIGE PUNTAJE
+            if (puntaje !== "Elegir..." && genero === "Elegir..."){
+                if (puntaje <= puntuacion){
+                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                }
+            }
+
+            //ELIGE GENERO
+            if(genero !== "Elegir..." && puntaje === "Elegir..."){
+                if(generito.includes(genero)){
+                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                } 
+            }
+
+            //NO ELIGE NINGUNO
+            if(puntaje === "Elegir..." && genero === "Elegir..."){
+                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+            }}
+
+
+
+           
 
             }
   
@@ -216,13 +256,20 @@ function mandarAmigo(id){
                 document.getElementById("idiomas").innerHTML = "Idiomas: "+ x;
                 
 
+                if (imagen == null){
+                    //alert("no tiene imagen")
+                    //alert(imagen);
+                    output = '<h1>' + titulo + '</h1><br><div><img src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';                  
+                }
 
+                if (imagen != null){
+                    //alert("tiene imagen")
+                    output = '<h1>' + titulo + '</h1><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';
+                }
 
-                
-     
-                let output = '<h1>' + titulo + '</h1><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';
-      
-    
+              
+                //let output = '<h1>' + titulo + '</h1><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';
+
 
 
       $('#movie').html(output);
@@ -283,3 +330,100 @@ function mandarAmigo(id){
             }
         });
   }
+
+
+
+function busquedaGuardada(id){
+    if (localStorage.getItem("history") != null) 
+    {
+        var historyTmp = localStorage.getItem("history");
+        historyTmp += id+"-";
+        localStorage.setItem("history",historyTmp);
+    }
+    else
+    {
+        var historyTmp = id;
+        localStorage.setItem("history",historyTmp);
+    }
+}
+
+
+
+function showHistory(){
+    if (localStorage.getItem("history") != null)
+    {
+
+
+        var historyTmp = localStorage.getItem("history");
+        var oldhistoryarray = historyTmp.split('-');
+        $('#lastResults').empty();
+
+
+
+
+        for(var i =0; i<oldhistoryarray.length; i++)
+        {
+
+            let id = oldhistoryarray[i];
+            
+        
+           
+
+
+        $.ajax({
+            url: "https://api.themoviedb.org/3/movie/" + oldhistoryarray[i] + "?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX" ,
+            contentType: "application/json",
+            type: "GET",
+            success: function(data) {
+
+
+
+                popularity = data["popularity"];
+                vote_average = data["vote_average"];
+                descripcion = data["overview"];
+                imagen = data["poster_path"];
+                titulo = data["title"];
+                lanzamiento = data["release_date"];
+                
+
+                //alert("id" + id)
+
+                $('#lastResults').append('<h5>' + titulo + '</h5><br><div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div>');
+
+
+       },
+            error: function(err) {
+                console.log("hola")
+                //alert(JSON.stringify(err));
+            }
+        });
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
