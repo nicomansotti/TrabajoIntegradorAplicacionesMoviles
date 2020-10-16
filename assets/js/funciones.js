@@ -12,7 +12,7 @@ function validacion() {
   if (document.getElementById('email').value == "") {
     // Si no se cumple la condicion...
     document.querySelector('.alert').style.display = 'block' ;
-    document.getElementById('mailcito').innerHTML = "Mail suyo debe tener un valor"
+    document.getElementById('mailcito').innerHTML = "El campo 'Su E-mail' debe tener un valor"
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none' ;
     },3000);
@@ -26,7 +26,7 @@ function validacion() {
     // Si no se cumple la condicion...
 
     document.querySelector('.alert').style.display = 'block' ;
-    document.getElementById('mailcito').innerHTML = "Mail de amigo debe tener un valor"
+    document.getElementById('mailcito').innerHTML = "Debe colocar el e-mail de su amigo"
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none' ;
     },3000);
@@ -51,7 +51,7 @@ function validacion() {
   else if (validateEmail(document.getElementById('email').value) != true ) {
     // Si no se cumple la condicion...
     document.querySelector('.alert').style.display = 'block' ;
-    document.getElementById('mailcito').innerHTML = "Ingresar correctamente su email"
+    document.getElementById('mailcito').innerHTML = "Ingresar correctamente su e-mail"
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none' ;
     },3000);
@@ -63,7 +63,7 @@ function validacion() {
   else if (validateEmail(document.getElementById('emailb').value) != true ) {
     // Si no se cumple la condicion...
     document.querySelector('.alert').style.display = 'block' ;
-    document.getElementById('mailcito').innerHTML = "Ingresar correctamente el email de su amigo"
+    document.getElementById('mailcito').innerHTML = "Ingresar correctamente el e-mail de su amigo"
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none' ;
     },3000);

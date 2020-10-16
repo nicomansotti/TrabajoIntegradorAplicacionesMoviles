@@ -220,7 +220,7 @@ function mandarAmigo(id){
 
                 
      
-      let output = '<h1>'+titulo+'</h1><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div>Descripción: '+descripcion+'</div><br><div>Puntaje: '+vote_average+'</div><br><div>Lanzamiento: '+lanzamiento+'</div><br><div>Idioma original: '+idiomaOriginal+'</div>';
+                let output = '<h1>' + titulo + '</h1><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';
       
     
 
@@ -270,7 +270,7 @@ function mandarAmigo(id){
       //let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario...">Popularidad: '+popularity+'\n \nPuntaje: '+vote_average+'\n \nSinapsis: '+descripcion+'\n \nMira esta peli!!!</textarea>'
 
       //no manda la info en el comentario. lo manda en el asunto
-      let output = '<label>Mail suyo</label><input id="email" type="text" placeholder="Introduzca su Email"><label>Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" readonly value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><div><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea></div>'
+      let output = '<label>Su E-mail</label><input id="email" type="text" placeholder="Introduzca su Email"><label>E-Mail de su amigo</label><input id="emailb" type="text" placeholder="Introduzca el Email de su amigo"><label>Asunto</label><input id="subject" type="text" placeholder="Introduzca un asunto" readonly value="Titulo: '+titulo+' | Fecha Lanzamiento: '+lanzamiento+' | Puntuacion: '+vote_average+'"><label>Comentario</label><div><textarea rows="12" cols="50" name="comentario" id="comentario" placeholder="Deja un comentario..."></textarea></div>'
 
       //document.getElementById('subject').value = "Popularidad: "+popularity+" - Puntaje: "+vote_average+" - Sinapsis: "+descripcion;
 
