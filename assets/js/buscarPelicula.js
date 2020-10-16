@@ -2,8 +2,6 @@ diez = 10
 
 function buscarPeli(){
 
-    alert(diez);
-
     peliculaBuscador = document.getElementById('peliculaBuscador').value ;
     añoPeli = document.getElementById('añoPeli').value ;
     puntaje = document.getElementById('puntaje').value;
@@ -24,7 +22,6 @@ function buscarPeli(){
     type: "GET",
     success: function(data) {
 
-        alert(diez);
 
         if(data["results"] == []){
             alert("[ERROR] No se encontraron resultados");
@@ -365,79 +362,43 @@ function showHistory(){
     if (localStorage.getItem("history") != null)
     {
 
-
         var historyTmp = localStorage.getItem("history");
         var oldhistoryarray = historyTmp.split('-');
         $('#lastResults').empty();
-
-
-
 
         for(var i =0; i<oldhistoryarray.length; i++)
         {
 
             let id = oldhistoryarray[i];
             
-        
-           
 
+            $.ajax({
+                url: "https://api.themoviedb.org/3/movie/" + oldhistoryarray[i] + "?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX" ,
+                contentType: "application/json",
+                type: "GET",
+                success: function(data) {
 
-        $.ajax({
-            url: "https://api.themoviedb.org/3/movie/" + oldhistoryarray[i] + "?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX" ,
-            contentType: "application/json",
-            type: "GET",
-            success: function(data) {
+                    popularity = data["popularity"];
+                    vote_average = data["vote_average"];
+                    descripcion = data["overview"];
+                    imagen = data["poster_path"];
+                    titulo = data["title"];
+                    lanzamiento = data["release_date"];
 
+                    if (imagen == null){
+                        $('#lastResults').append('<h2>' + titulo + '</h2><br><div><img onclick="movieSelected(' + id + ');" src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div>');
+                    }
+                    
+                    if(imagen != null){
+                    $('#lastResults').append('<h2>' + titulo + '</h2><br><div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"></div>');
+                    }
 
-
-                popularity = data["popularity"];
-                vote_average = data["vote_average"];
-                descripcion = data["overview"];
-                imagen = data["poster_path"];
-                titulo = data["title"];
-                lanzamiento = data["release_date"];
-
-                if (imagen == null){
-                    $('#lastResults').append('<h5>' + titulo + '</h5><br><div><img onclick="movieSelected(' + id + ');" src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div>');
+                },
+                error: function(err) {
+                    console.log("hola")
+                    //alert(JSON.stringify(err));
                 }
-                
-                if(imagen != null){
-                $('#lastResults').append('<h5>' + titulo + '</h5><br><div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div>');
-                }
-
-       },
-            error: function(err) {
-                console.log("hola")
-                //alert(JSON.stringify(err));
-            }
-        });
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            });
+        }
     }
 }
