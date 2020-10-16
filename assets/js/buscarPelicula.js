@@ -384,12 +384,14 @@ function showHistory(){
                 imagen = data["poster_path"];
                 titulo = data["title"];
                 lanzamiento = data["release_date"];
+
+                if (imagen == null){
+                    $('#lastResults').append('<h5>' + titulo + '</h5><br><div><img onclick="movieSelected(' + id + ');" src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div>');
+                }
                 
-
-                //alert("id" + id)
-
+                if(imagen != null){
                 $('#lastResults').append('<h5>' + titulo + '</h5><br><div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div>');
-
+                }
 
        },
             error: function(err) {
