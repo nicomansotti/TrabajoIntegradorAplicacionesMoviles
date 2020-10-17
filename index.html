@@ -20,112 +20,108 @@
           <p>Obtené info de cualquier película!</p>
       </header>
 
-    <nav>
-        <ul>
-            <li><a href="contacto.html">Contacto </a></li>
-        </ul>
-    </nav>
+      <nav>
+          <ul>
+              <li><a href="contacto.html">Contacto </a></li>
+          </ul>
+      </nav>
 
 
 
 
-    <div class="buscador">
-        <form action="javascript:buscarPeli();">
+      <div class="buscador">
+          <form action="javascript:buscarPeli();">
 
-            <label id="margenPeli">Película</label>
-            <input type="text" id="peliculaBuscador">
+              <label id="margenPeli">Película</label>
+              <input type="text" id="peliculaBuscador">
 
-            <button id="botonFiltro" type="button" onclick="mostrarFiltros()">Ver filtros</button>
+              <button id="botonFiltro" type="button" onclick="mostrarFiltros()">Ver filtros</button>
 
-            <div style="display: none;" id="filtros">
+              <div style="display: none;" id="filtros">
 
-            <label id="yearFilm">Año Pelicula</label>
-            <select name="añoPeli" id="añoPeli">
-                <option value="Elegir..." selected>Elegir...</option>
-                <option value=2020>2020</option>
-                <option value=2019>2019</option>
-                <option value=2018>2018</option>
-                <option value=2017>2017</option>
-                <option value=2016>2016</option>
-                <option value=2015>2015</option>
-                <option value=2014>2014</option>
-                <option value=2013>2013</option>
-                <option value=2012>2012</option>
-                <option value=2011>2011</option>
-                <option value=2010>2010</option>
-            </select>
-
-
-            <label>Puntaje(Mínimo)</label>
-            <select name="puntaje" id="puntaje">
-                <option value="Elegir..." selected>Elegir...</option>
-                <option value=10>10</option>
-                <option value=9>9</option>
-                <option value=8>8</option>
-                <option value=7>7</option>
-                <option value=6>6</option>
-                <option value=5>5</option>
-                <option value=4>4</option>
-                <option value=3>3</option>
-                <option value=2>2</option>
-                <option value=1>1</option>
-            </select>
+                  <label id="yearFilm">Año Pelicula</label>
+                  <select name="añoPeli" id="añoPeli">
+                      <option value="Elegir..." selected>Elegir...</option>
+                      <option value=2020>2020</option>
+                      <option value=2019>2019</option>
+                      <option value=2018>2018</option>
+                      <option value=2017>2017</option>
+                      <option value=2016>2016</option>
+                      <option value=2015>2015</option>
+                      <option value=2014>2014</option>
+                      <option value=2013>2013</option>
+                      <option value=2012>2012</option>
+                      <option value=2011>2011</option>
+                      <option value=2010>2010</option>
+                  </select>
 
 
-            <label>Genero</label>
-            <select name="genero" id="genero">
-                <option value="Elegir..." selected>Elegir...</option>
-                <option value=28>Acción</option>
-                <option value=53>Suspenso</option>
-                <option value=10749>Romance</option>
-                <option value=14>Fantasía</option>
-                <option value=35>Comedia</option>
-                <option value=10402>Música</option>
-                <option value=18>Drama</option>
-                <option value=80>Crimen</option>
-                <option value=16>Animación</option>
-                <option value=9648>Misterio</option>
-                <option value=27>Terror</option>
-            </select>
-
-        </div>
-
-            <button id="submit" type="submit">Buscar</button>
-
-        </form>
-    </div>
-    <main>
-
-        <div id="mensajito" class="alert"></div>
-
-        <!-- PELICULAS BUSCADAS -->
-        <div class="container">
-            <div id="movies" class="row"></div>
-
-                 <!-- BOTON PARA BUSCAR MÁS PELÍCULAS -->
-                 <div onclick="buscarPeli()" id="buscarMas"></div>
-                </div>
-
-            
-            <h4>Ultimas peliculas guardadas</h4>
-            <div id="lastResults"></div>
+                  <label>Puntaje(Mínimo)</label>
+                  <select name="puntaje" id="puntaje">
+                      <option value="Elegir..." selected>Elegir...</option>
+                      <option value=10>10</option>
+                      <option value=9>9</option>
+                      <option value=8>8</option>
+                      <option value=7>7</option>
+                      <option value=6>6</option>
+                      <option value=5>5</option>
+                      <option value=4>4</option>
+                      <option value=3>3</option>
+                      <option value=2>2</option>
+                      <option value=1>1</option>
+                  </select>
 
 
+                  <label>Genero</label>
+                  <select name="genero" id="genero">
+                      <option value="Elegir..." selected>Elegir...</option>
+                      <option value=28>Acción</option>
+                      <option value=53>Suspenso</option>
+                      <option value=10749>Romance</option>
+                      <option value=14>Fantasía</option>
+                      <option value=35>Comedia</option>
+                      <option value=10402>Música</option>
+                      <option value=18>Drama</option>
+                      <option value=80>Crimen</option>
+                      <option value=16>Animación</option>
+                      <option value=9648>Misterio</option>
+                      <option value=27>Terror</option>
+                  </select>
 
-       
+              </div>
+
+              <button id="submit" type="submit">Buscar</button>
+
+          </form>
+      </div>
+      <main>
+
+          <div id="mensajito" class="alert"></div>
+
+          <!-- PELICULAS BUSCADAS -->
+          <div class="container">
+              <div id="movies" class="row">
+
+                  <!-- BOTON PARA BUSCAR MÁS PELÍCULAS -->
+                  <div onclick="buscarPeli()" id="buscarMas"></div>
+              </div>
+          </div>
 
 
+          <div class="containerUltimaBusqueda">
+              <h5>Búsquedas recientes</h5>
+              <div class="lastBusqueda" id="lastResults">
 
-        
+              </div>
 
-        <footer>
-            <h3>  Sitio desarrollado por estudiantes App Moviles. UNAJ 2020 &copy;  </h3>
-        </footer>
-     
+          </div>
 
-    </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/js/buscarPelicula.js"></script>
-    <script src="./assets/js/funciones.js"></script>
+      </main>
+      <footer>
+          <h3>  Sitio desarrollado por Nicolas Mansotti y Carlos Medina. App Moviles. UNAJ 2020 &copy;  </h3>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="./assets/js/buscarPelicula.js"></script>
+      <script src="./assets/js/funciones.js"></script>
   </body>
 </html>

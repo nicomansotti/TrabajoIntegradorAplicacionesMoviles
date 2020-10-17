@@ -8,13 +8,13 @@
 body {
     background-color: black;
     color: white;
-    display: grid;
+    
 }
 
 .content-cabecera {
     width: 100%;
     margin-top: 10px;
-    text-align: center;
+    text-align:left;
     margin: 5%;
     margin-right:5px;
 }
@@ -23,10 +23,11 @@ body {
     background-color: #262ec3;
     width: 40%;
     height: 40%;
+    position:center;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid white;
-    margin: auto;
+    margin:auto;
 }
 h1{
     margin-left:1%;
@@ -89,7 +90,7 @@ input, select {
 
 
 #peliculaBuscador {
-    width: 80%;
+    width: 85%;
     font-size: 1rem;
 }
 
@@ -135,6 +136,107 @@ input, select {
         background: #5d5bf7;
     }
 
+/*busquedas recientes ---------------*/
+
+.containerUltimaBusqueda {
+   /* position: unset;*/
+    float:left;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:3%;
+    width:80%;
+   
+}
+
+.containerUltimaBusqueda h5 {
+    
+    margin: 1%;
+    margin-top: 2%;
+    font-size: 100%;
+    text-align:initial;
+}
+
+
+.lastBusqueda {
+
+    background:#282727;
+    border-radius:4px;
+    margin-left: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: 250ms all;
+}
+.lastBusqueda::-webkit-scrollbar {
+    width: 2px; /* Tamaño del scroll en vertical */
+    height: 10px; /* Tamaño del scroll en horizontal */
+
+}
+
+.lastBusqueda::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+
+}
+    /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+    .lastBusqueda::-webkit-scrollbar-thumb:hover {
+        background: #b3b3b3;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+    /* Cambiamos el fondo cuando esté en active */
+    .lastBusqueda::-webkit-scrollbar-thumb:active {
+        background-color: #999999;
+    }
+
+/* redondeamos las esquinas del track */
+.lastBusqueda::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+    /* Cambiamos el fondo cuando esté en active o hover */
+    .lastBusqueda::-webkit-scrollbar-track:hover,
+    .lastBusqueda::-webkit-scrollbar-track:active {
+        background:gray;
+    }
+
+.lastBusqueda .columB {
+    flex: auto;
+}
+
+
+.columB {
+    margin: 2px;
+    border-radius: 4px;
+    transition: 250ms all;
+    width: 70%;
+    height: 50%;
+    border-radius: 4px;
+   /* box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);*/
+    cursor: pointer;
+    border-color:white;
+    border:10px;
+}
+
+
+    .columB:hover {
+        margin-left: 0 40px;
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+
+
+    .columB img {
+        width: 150px;
+        height:200px;
+    }
+
+
+/* --------------------------------*/
 
 /*resultado de busqueda*/
 
@@ -152,7 +254,7 @@ main .colum {
 }
     .container h2 {
         background-color: #161616;
-        /*width:95%;*/
+        width:95%;
     }
 .colum {
     
@@ -175,7 +277,7 @@ main .colum {
 
     .colum h3 {
         background-color:#4a3d3d;
-      /*  opacity:0.8;*/
+       /* opacity:0.8;*/
         font-size: 100%;
         width: 100%;
         border-radius: 5px 5px 0 0;
@@ -250,7 +352,7 @@ main .colum {
 }
 
 .sharewithfriend form{
-    margin-left: 15%;
+    margin-left: 10%;
     
 }
 #compartirAmigoo {
@@ -259,7 +361,7 @@ main .colum {
 }
 
 #compartirAmigoo input, select {
-    width: 80%;
+    width: 85%;
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
@@ -269,7 +371,7 @@ main .colum {
 }
 
 #comentario {
-    width: 80%;
+    width: 85%;
     border-radius: 4px;
     border: 1px solid #ccc;
 
@@ -337,8 +439,16 @@ main .colum {
     margin-top: 1%;
 }
 
-footer .centro {
-    font-size: 12px;
+
+footer {
+    text-align:center;
+    width:100%;
+    float:left;
+    font-size: 10px;
+    margin-top:10%;
+    bottom: 0;
+    z-index: 999999;
+
 }
 
 .about {
@@ -399,8 +509,9 @@ footer .centro {
     .content-logo {
         width: 15%;
         height: 15%;
-        float: right;
         margin-right: 20px;
+        margin-top:2px;
+        
     }
 
    /* #margenPeli {
@@ -420,10 +531,7 @@ footer .centro {
         margin-left: 1%;
         margin-top: 1%;
     }
-    .content-logo {
-        width: 10%;
-        height: 10%;
-    }
+  
 
     .colum {
         width: 31.33%;
@@ -465,10 +573,7 @@ footer .centro {
 
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
 
-    .content-logo {
-        width: 7%;
-        height: 7%;
-    }
+  
 
     .colum {
         width: 23%;

@@ -128,7 +128,7 @@ function buscarPeli(){
 
             //NO ELIGE NINGUNO
             if(puntaje === "Elegir..." && genero === "Elegir..."){
-                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div ></div>")
             }}
 
 
@@ -386,13 +386,13 @@ function showHistory(){
                     lanzamiento = data["release_date"];
 
                     if (imagen == null){
-                        $('#lastResults').append('<h2>' + titulo + '</h2><br><div><img onclick="movieSelected(' + id + ');" src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div>');
+                        $('#lastResults').append('<div class="columB">'+'<div><img onclick="movieSelected(' + id + ');" src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div>');
                     }
                     
                     if(imagen != null){
-                    $('#lastResults').append('<h2>' + titulo + '</h2><br><div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"></div>');
+                        $('#lastResults').append('<div class="columB">' + '<div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"></div>');
                     }
-
+                    //resultHtml.append("</div>");
                 },
                 error: function(err) {
                     console.log("hola")
