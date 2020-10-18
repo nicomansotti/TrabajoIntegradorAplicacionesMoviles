@@ -86,7 +86,7 @@ function buscarPeli(){
             if (puntaje !== "Elegir..." && genero !== "Elegir..."){
                 if (puntaje <= puntuacion){
                     if(generito.includes(genero)){
-                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                        resultHtml.append("<div class='colum'><h3 id='titulete'>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                     }
                 }
             }
@@ -94,20 +94,20 @@ function buscarPeli(){
             //ELIGE PUNTAJE
             if (puntaje !== "Elegir..." && genero === "Elegir..."){
                 if (puntaje <= puntuacion){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                    resultHtml.append("<div class='colum'><h3 id='titulete'>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                 }
             }
 
             //ELIGE GENERO
             if(genero !== "Elegir..." && puntaje === "Elegir..."){
                 if(generito.includes(genero)){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                    resultHtml.append("<div class='colum'><h3 id='titulete'>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                 } 
             }
 
             //NO ELIGE NINGUNO
             if(puntaje === "Elegir..." && genero === "Elegir..."){
-                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                resultHtml.append("<div class='colum'><h3 id='titulete'>" + titulo + "</h3><img src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
             }
             }
 
@@ -120,7 +120,7 @@ function buscarPeli(){
             if (puntaje !== "Elegir..." && genero !== "Elegir..."){
                 if (puntaje <= puntuacion){
                     if(generito.includes(genero)){
-                        resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                        resultHtml.append("<div class='colum'><h3 id='titulete'>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                     }
                 }
             }
@@ -128,20 +128,20 @@ function buscarPeli(){
             //ELIGE PUNTAJE
             if (puntaje !== "Elegir..." && genero === "Elegir..."){
                 if (puntaje <= puntuacion){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                    resultHtml.append("<div class='colum'><h3 id='titulete'>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>"+ "<a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                 }
             }
 
             //ELIGE GENERO
             if(genero !== "Elegir..." && puntaje === "Elegir..."){
                 if(generito.includes(genero)){
-                    resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
+                    resultHtml.append("<div class='colum'><h3 id='titulete'>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div >")
                 } 
             }
 
             //NO ELIGE NINGUNO
             if(puntaje === "Elegir..." && genero === "Elegir..."){
-                resultHtml.append("<div class='colum'><h3>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div ></div>")
+                resultHtml.append("<div class='colum'><h3 id='titulete'>" + titulo + "</h3><img src='https://image.tmdb.org/t/p/w500" + imagen + "'>" + "<h4>Puntuación: " + puntuacion + "</h4>" +/*"<h4 id='descripcionPeli'>" + descripcion + "</h4>" + */"<h4>Fecha de lanzamiento: " + año + "</h4>" + " <a id='sharebutton' onclick='movieSelected(" + id + "); busquedaGuardada(" + id + ");' href='#'>Detalles</a><a id='sharebuttonn' onclick='mandarAmigo(" + id +")' href='#'> Compartir </a></div ></div>")
             }}
 
 

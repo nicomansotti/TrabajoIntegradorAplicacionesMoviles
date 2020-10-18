@@ -142,3 +142,7 @@ section .imageContainer {
     display:none;
     width: 50%;
 }
+
+#titulete{
+    padding: 10%;
+}
