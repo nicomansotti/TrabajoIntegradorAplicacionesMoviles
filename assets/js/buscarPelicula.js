@@ -33,14 +33,20 @@ function buscarPeli(){
         $('#movies').empty();
 
 
-        
+        /*
         $('#peliculaBuscador').change(function(){
-
+            diez = 10;
             $('#buscarMas').show();
             
             
         });
-        
+        */
+
+
+
+      
+       
+
 
         var buscarMas = $("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar todos los resultados</button>");
         var resultHtml = $("<div><h2>Resultado de busqueda:</h2>");
@@ -52,6 +58,11 @@ function buscarPeli(){
 
 
         for (i = 0; i <  diez; i++) {
+
+
+            if (diez === data["results"].length){
+                $('#buscarMas').hide();
+            }
 
             titulo = data["results"][i]["title"];
             imagen = data["results"][i]["poster_path"];
@@ -144,6 +155,8 @@ function buscarPeli(){
 
 
                 diez= data["results"].length;
+
+                
 
 
             },
@@ -268,12 +281,12 @@ function mandarAmigo(id){
                 if (imagen == null){
                     //alert("no tiene imagen")
                     //alert(imagen);
-                    output = '<h1>' + titulo + '</h1><br><div><img src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';                  
+                    output = '<div id="titulardo"><h3>' + titulo + '</h3></div><br><div><img src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div><br><div id="sinopsilla"><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';                  
                 }
 
                 if (imagen != null){
                     //alert("tiene imagen")
-                    output = '<h1>' + titulo + '</h1><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';
+                    output = '<div id="titulardo"><h3>' + titulo + '</h3></div><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div id="sinopsilla"><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';
                 }
 
               
@@ -292,7 +305,12 @@ function mandarAmigo(id){
   }
 
 
-
+    //cuando se elige otra peli, se resetea las pelis que te devuelve y devuelve 10 la primera vez que busca
+    $('#submit').click(function(){
+        diez = 10;
+        $('#buscarMas').show();  
+        
+    });
 
 
   function llenarCamposMail(){
@@ -359,9 +377,13 @@ function busquedaGuardada(id){
 
 
 function showHistory(){
+
+    if (localStorage.getItem("history") == null){
+        $('#busqueditaReciente').hide();
+    }
+
     if (localStorage.getItem("history") != null)
     {
-
         var historyTmp = localStorage.getItem("history");
         var oldhistoryarray = historyTmp.split('-');
         $('#lastResults').empty();

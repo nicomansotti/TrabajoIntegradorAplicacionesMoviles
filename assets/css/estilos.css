@@ -7,8 +7,10 @@
 
 body {
     background-color: black;
-    color: white;
-    
+    color: white;    
+    padding-left: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
 }
 
 .content-cabecera {
@@ -36,8 +38,8 @@ p{
     margin-left:1%;
 }
     .content-logo img {
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 0%;
     }
 
 
@@ -173,8 +175,8 @@ input, select {
     transition: 250ms all;
 }
 .lastBusqueda::-webkit-scrollbar {
-    width: 2px; /* Tamaño del scroll en vertical */
-    height: 10px; /* Tamaño del scroll en horizontal */
+    width: 2px; /* Tamaï¿½o del scroll en vertical */
+    height: 10px; /* Tamaï¿½o del scroll en horizontal */
 
 }
 
@@ -183,12 +185,12 @@ input, select {
     border-radius: 4px;
 
 }
-    /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+    /* Cambiamos el fondo y agregamos una sombra cuando estï¿½ en hover */
     .lastBusqueda::-webkit-scrollbar-thumb:hover {
         background: #b3b3b3;
         box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
     }
-    /* Cambiamos el fondo cuando esté en active */
+    /* Cambiamos el fondo cuando estï¿½ en active */
     .lastBusqueda::-webkit-scrollbar-thumb:active {
         background-color: #999999;
     }
@@ -197,7 +199,7 @@ input, select {
 .lastBusqueda::-webkit-scrollbar-track {
     border-radius: 4px;
 }
-    /* Cambiamos el fondo cuando esté en active o hover */
+    /* Cambiamos el fondo cuando estï¿½ en active o hover */
     .lastBusqueda::-webkit-scrollbar-track:hover,
     .lastBusqueda::-webkit-scrollbar-track:active {
         background:gray;
@@ -378,6 +380,7 @@ main .colum {
 }
 
 #buscarMas {
+    background-color: chartreuse;
     margin-top: 20px;
     position: static;
     float: right;
@@ -433,7 +436,7 @@ main .colum {
     position:center;
 }
 
-} 
+ 
 /*----------------------------------------*/
 .margenTop {
     margin-top: 1%;
@@ -514,6 +517,8 @@ footer {
         
     }
 
+
+
    /* #margenPeli {
         margin-top: 55%;
     }*/
@@ -592,6 +597,8 @@ footer {
             height: 380px;
         }
 
+    }
+
    /*     .colum h2 {
             font-size: 220%;
             width: 100%;
@@ -642,7 +649,7 @@ footer {
             background-color: tomato;
             opacity: 0.999;
         }
-
+    }
 
         /*.colum h2 {
             font-size: 220%;
@@ -666,4 +673,3 @@ footer {
    /* #sharebutton {
         font-size: 2rem;
     }*/
-

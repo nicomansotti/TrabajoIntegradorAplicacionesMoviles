@@ -33,6 +33,9 @@
           <form action="javascript:buscarPeli();">
 
               <label id="margenPeli">Película</label>
+
+              <div id="mensajito" class="alert"></div>
+
               <input type="text" id="peliculaBuscador">
 
               <button id="botonFiltro" type="button" onclick="mostrarFiltros()">Ver filtros</button>
@@ -96,20 +99,23 @@
       </div>
       <main>
 
-          <div id="mensajito" class="alert"></div>
+          
 
           <!-- PELICULAS BUSCADAS -->
           <div class="container">
               <div id="movies" class="row">
 
                   <!-- BOTON PARA BUSCAR MÁS PELÍCULAS -->
-                  <div onclick="buscarPeli()" id="buscarMas"></div>
+                 
               </div>
+
+              <div onclick="buscarPeli()" id="buscarMas"></div>
+
           </div>
 
 
           <div class="containerUltimaBusqueda">
-              <h5>Búsquedas recientes</h5>
+              <h5 id="busqueditaReciente">Búsquedas recientes</h5>
               <div class="lastBusqueda" id="lastResults">
 
               </div>
