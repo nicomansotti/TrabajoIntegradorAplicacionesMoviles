@@ -424,3 +424,149 @@ function showHistory(){
         }
     }
 }
+
+function showTopRated() {
+
+    $.ajax({
+        url: "https://api.themoviedb.org/3/movie/top_rated?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&page=1",
+        contentType: "application/json",
+        type: "GET",
+        success: function (data) {
+
+            topten = 10;
+            for (i = 0; i < topten; i++) {
+                id = data["results"][i]["id"];
+                titulo = data["results"][i]["title"];
+                imagen = data["results"][i]["poster_path"];
+                popularity = data["popularity"];
+                vote_average = data["vote_average"];
+                descripcion = data["overview"];
+                lanzamiento = data["release_date"];
+
+                if (imagen == null) {
+                    $('#top').append('<div class="columC"> src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div>');
+                }
+
+                if (imagen != null) {
+                    $('#top').append('<div class="columC">' + '<div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"/></div>');
+                    
+                }
+                //resultHtml.append("</div>");
+            }
+            error: function errror(err) {
+                console.log("hola")
+                //alert(JSON.stringify(err));
+            }
+        }
+    });
+}
+
+
+function showTrendingMovies() {
+
+    $.ajax({
+        url: "https://api.themoviedb.org/3/trending/movie/day?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&page=1",
+        contentType: "application/json",
+        type: "GET",
+        success: function (data) {
+
+            topten = 10;
+            for (i = 0; i < topten; i++) {
+                id = data["results"][i]["id"];
+                titulo = data["results"][i]["title"];
+                imagen = data["results"][i]["poster_path"];
+                popularity = data["popularity"];
+                vote_average = data["vote_average"];
+                descripcion = data["overview"];
+                lanzamiento = data["release_date"];
+
+                if (imagen == null) {
+                    $('#trending').append('<div class="columC"> src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div>');
+                }
+
+                if (imagen != null) {
+                    $('#trending').append('<div class="columC">' + '<div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"/></div>');
+
+                }
+                //resultHtml.append("</div>");
+            }
+            error: function errror(err) {
+                console.log("hola")
+                //alert(JSON.stringify(err));
+            }
+        }
+    });
+}
+
+function showPopularMovies() {
+
+    $.ajax({
+        url: "https://api.themoviedb.org/3/movie/popular?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&page=1",
+        contentType: "application/json",
+        type: "GET",
+        success: function (data) {
+
+            topten = 10;
+            for (i = 0; i < topten; i++) {
+                id = data["results"][i]["id"];
+                titulo = data["results"][i]["title"];
+                imagen = data["results"][i]["poster_path"];
+                popularity = data["popularity"];
+                vote_average = data["vote_average"];
+                descripcion = data["overview"];
+                lanzamiento = data["release_date"];
+
+                if (imagen == null) {
+                    $('#popular').append('<div class="columC"> src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div>');
+                }
+
+                if (imagen != null) {
+                    $('#popular').append('<div class="columC">' + '<div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"/></div>');
+
+                }
+                //resultHtml.append("</div>");
+            }
+            error: function errror(err) {
+                console.log("hola")
+                //alert(JSON.stringify(err));
+            }
+        }
+    });
+}
+
+
+function showNewMovies() {
+
+    $.ajax({
+        url: "https://api.themoviedb.org/3/movie/upcoming?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&page=1",
+        contentType: "application/json",
+        type: "GET",
+        success: function (data) {
+
+            topten = 10;
+            for (i = 0; i < topten; i++) {
+                id = data["results"][i]["id"];
+                titulo = data["results"][i]["title"];
+                imagen = data["results"][i]["poster_path"];
+                popularity = data["popularity"];
+                vote_average = data["vote_average"];
+                descripcion = data["overview"];
+                lanzamiento = data["release_date"];
+
+                if (imagen == null) {
+                    $('#new').append('<div class="columC"> src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div>');
+                }
+
+                if (imagen != null) {
+                    $('#new').append('<div class="columC">' + '<div><img onclick="movieSelected(' + id + ');" src="https://image.tmdb.org/t/p/w500' + imagen + '"/></div>');
+
+                }
+                //resultHtml.append("</div>");
+            }
+            error: function errror(err) {
+                console.log("hola")
+                //alert(JSON.stringify(err));
+            }
+        }
+    });
+}

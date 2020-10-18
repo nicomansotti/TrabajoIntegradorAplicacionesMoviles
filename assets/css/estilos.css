@@ -240,6 +240,309 @@ input, select {
 
 /* --------------------------------*/
 
+/*TOP Rated ---------------*/
+
+.topRated{
+    /* position: unset;*/
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    width: 80%;
+}
+
+    .topRated h5 {
+        margin: 1%;
+        margin-top: 2%;
+        font-size: 100%;
+        text-align: initial;
+    }
+
+
+.top {
+    background: #282727;
+    border-radius: 4px;
+    margin-left: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: 250ms all;
+}
+
+    .top::-webkit-scrollbar {
+        width: 2px; /* Tama�o del scroll en vertical */
+        height: 10px; /* Tama�o del scroll en horizontal */
+    }
+
+    .top::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+    }
+        /* Cambiamos el fondo y agregamos una sombra cuando est� en hover */
+        .top::-webkit-scrollbar-thumb:hover {
+            background: #b3b3b3;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        /* Cambiamos el fondo cuando est� en active */
+        .top::-webkit-scrollbar-thumb:active {
+            background-color: #999999;
+        }
+
+    /* redondeamos las esquinas del track */
+    .top::-webkit-scrollbar-track {
+        border-radius: 4px;
+    }
+        /* Cambiamos el fondo cuando est� en active o hover */
+        .top::-webkit-scrollbar-track:hover,
+        .top::-webkit-scrollbar-track:active {
+            background: gray;
+        }
+
+    .top .columC {
+        flex: auto;
+    }
+
+
+.columC {
+    margin: 2px;
+    border-radius: 4px;
+    transition: 250ms all;
+    width: 70%;
+    height: 50%;
+    border-radius: 4px;
+    /* box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);*/
+    cursor: pointer;
+    border-color: white;
+    border: 10px;
+}
+
+
+    .columC:hover {
+        margin-left: 0 40px;
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+
+    .columC img {
+        width: 150px;
+        height: 200px;
+    }
+
+
+/* --------------------------------*/
+
+/*Tendencias ---------------*/
+
+.trendingMovies {
+    /* position: unset;*/
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    width: 80%;
+}
+
+    .trendingMovies h5 {
+        margin: 1%;
+        margin-top: 2%;
+        font-size: 100%;
+        text-align: initial;
+    }
+
+
+.trending {
+    background: #282727;
+    border-radius: 4px;
+    margin-left: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: 250ms all;
+}
+
+    .trending::-webkit-scrollbar {
+        width: 2px; /* Tama�o del scroll en vertical */
+        height: 10px; /* Tama�o del scroll en horizontal */
+    }
+
+    .trending::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+    }
+        /* Cambiamos el fondo y agregamos una sombra cuando est� en hover */
+        .trending::-webkit-scrollbar-thumb:hover {
+            background: #b3b3b3;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        /* Cambiamos el fondo cuando est� en active */
+        .trending::-webkit-scrollbar-thumb:active {
+            background-color: #999999;
+        }
+
+    /* redondeamos las esquinas del track */
+    .trending::-webkit-scrollbar-track {
+        border-radius: 4px;
+    }
+        /* Cambiamos el fondo cuando est� en active o hover */
+        .trending::-webkit-scrollbar-track:hover,
+        .trending::-webkit-scrollbar-track:active {
+            background: gray;
+        }
+
+    .trending .columC {
+        flex: auto;
+    }
+
+/* --------------------------------*/
+
+
+/*Populares ---------------*/
+
+.popularMovies {
+    /* position: unset;*/
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    width: 80%;
+}
+
+    .popularMovies h5 {
+        margin: 1%;
+        margin-top: 2%;
+        font-size: 100%;
+        text-align: initial;
+    }
+
+
+.popular {
+    background: #282727;
+    border-radius: 4px;
+    margin-left: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: 250ms all;
+}
+
+    .popular::-webkit-scrollbar {
+        width: 2px; /* Tama�o del scroll en vertical */
+        height: 10px; /* Tama�o del scroll en horizontal */
+    }
+
+    .popular::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+    }
+        /* Cambiamos el fondo y agregamos una sombra cuando est� en hover */
+        .popular::-webkit-scrollbar-thumb:hover {
+            background: #b3b3b3;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        /* Cambiamos el fondo cuando est� en active */
+        .popular::-webkit-scrollbar-thumb:active {
+            background-color: #999999;
+        }
+
+    /* redondeamos las esquinas del track */
+    .popular::-webkit-scrollbar-track {
+        border-radius: 4px;
+    }
+        /* Cambiamos el fondo cuando est� en active o hover */
+        .popular::-webkit-scrollbar-track:hover,
+        .popular::-webkit-scrollbar-track:active {
+            background: gray;
+        }
+
+    .popular .columC {
+        flex: auto;
+    }
+/* --------------------------------*/
+
+/*Nuevas ---------------*/
+
+.newMovies {
+    /* position: unset;*/
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    width: 80%;
+}
+
+    .newMovies h5 {
+        margin: 1%;
+        margin-top: 2%;
+        font-size: 100%;
+        text-align: initial;
+    }
+
+
+.new {
+    background: #282727;
+    border-radius: 4px;
+    margin-left: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: 250ms all;
+}
+
+    .new::-webkit-scrollbar {
+        width: 2px; /* Tama�o del scroll en vertical */
+        height: 10px; /* Tama�o del scroll en horizontal */
+    }
+
+    .new::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+    }
+        /* Cambiamos el fondo y agregamos una sombra cuando est� en hover */
+        .new::-webkit-scrollbar-thumb:hover {
+            background: #b3b3b3;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        /* Cambiamos el fondo cuando est� en active */
+        .new::-webkit-scrollbar-thumb:active {
+            background-color: #999999;
+        }
+
+    /* redondeamos las esquinas del track */
+    .new::-webkit-scrollbar-track {
+        border-radius: 4px;
+    }
+        /* Cambiamos el fondo cuando est� en active o hover */
+        .new::-webkit-scrollbar-track:hover,
+        .new::-webkit-scrollbar-track:active {
+            background: gray;
+        }
+
+    .new .columC {
+        flex: auto;
+    }
+
+
 /*resultado de busqueda*/
 
 main .colum {
@@ -480,10 +783,20 @@ footer {
     margin: 10%;
     display: block;
 }
-#mensajito, #mailcito {
+#mensajito {
     background-color: #f58a8a;
     border-radius: 1%;
     float: unset;
+    width:85%;
+    
+}
+
+#mailcito {
+    background-color: #f58a8a;
+    border-radius: 2%;
+    float: unset;
+    width: 77%;
+    margin-left:10%
 }
 
 @media (min-width:480px) { /* smartphones, Android phones, landscape iPhone */
@@ -518,11 +831,6 @@ footer {
     }
 
 
-
-   /* #margenPeli {
-        margin-top: 55%;
-    }*/
-
     .colum h3 {
         /*background-color: red;*/
         font-size: 100%;
@@ -554,24 +862,6 @@ footer {
             width: 100%;
         }
 
-       /* .colum h3 {*/
-            /*background-color: red;*/
-      /*      font-size: 110%;*/
-           /* width: 160px;
-            height: 160px;*/
-        }
-
-       /* .colum h4 {
-            margin-top: 10px;
-            float: unset;
-            font-size: 120%;
-        }*/
-
-
-/*    #sharebutton {
-        font-size: 1.5rem;
-    }
-}*/
 
 
 
@@ -599,34 +889,6 @@ footer {
 
     }
 
-   /*     .colum h2 {
-            font-size: 220%;
-            width: 100%;
-        }
-*/
-        /*.colum h3 {*/
-            /*background-color: red;*/
-            /*font-size: 110%;*/
-           /* width: 160px;
-            height: 160px;*/
-        /*}*/
-
-        /*.colum h4 {
-            margin-top: 10px;
-            float: unset;
-            font-size: 150%;
-        }
-*//*.colum h4 {
-            margin-top: 10px;
-            float: unset;
-            font-size: 150%;
-        }
-*/
-
- /*   #sharebutton {
-        font-size: 1.8rem;
-    }
-}*/
 
 
 
@@ -651,25 +913,4 @@ footer {
         }
     }
 
-        /*.colum h2 {
-            font-size: 220%;
-            width: 100%;
-        }*/
-
-        /*.colum h3 {*/
-            /*background-color: red;*/
-            /*font-size: 110%;
-            width: 250px;
-            height: 250px;
-        }*/
-
-        /*.colum h4 {
-            margin-top: 10px;
-            float: unset;
-            font-size: 150%;
-        }*/
-
-
-   /* #sharebutton {
-        font-size: 2rem;
-    }*/
+  

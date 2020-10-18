@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Movie App</title>
   </head>
-  <body onload="showHistory();">
+  <body onload="showTopRated(), showHistory(), showTrendingMovies(), showPopularMovies(),showNewMovies();">
 
       <header>
           <div class="content-cabecera">
@@ -99,27 +99,46 @@
       </div>
       <main>
 
-          
+
 
           <!-- PELICULAS BUSCADAS -->
           <div class="container">
               <div id="movies" class="row">
 
                   <!-- BOTON PARA BUSCAR MÁS PELÍCULAS -->
-                 
               </div>
-
-              <div onclick="buscarPeli()" id="buscarMas"></div>
-
           </div>
 
+          <div onclick="buscarPeli()" id="buscarMas"></div>
 
           <div class="containerUltimaBusqueda">
-              <h5 id="busqueditaReciente">Búsquedas recientes</h5>
+              <h5 id="busqueditaReciente">Búsquedas recientes:</h5>
               <div class="lastBusqueda" id="lastResults">
-
               </div>
+          </div>
 
+          <div class="topRated">
+              <h5 id="topRatedText">Lo más valorado:</h5>
+              <div class="top" id="top">
+              </div>
+          </div>
+
+          <div class="trendingMovies">
+              <h5 id="trendingMovieText">Tendencias:</h5>
+              <div class="trending" id="trending">
+              </div>
+          </div>
+
+          <div class="popularMovies">
+              <h5 id="popularMovieText">Populares:</h5>
+              <div class="popular" id="popular">
+              </div>
+          </div>
+
+          <div class="newMovies">
+              <h5 id="newrMovieText">Lo nuevo:</h5>
+              <div class="new" id="new">
+              </div>
           </div>
 
       </main>
