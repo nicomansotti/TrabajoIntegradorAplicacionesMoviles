@@ -48,7 +48,9 @@ function buscarPeli(){
        
 
 
-        var buscarMas = $("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar todos los resultados</button>");
+        var buscarMas = $("<button onclick='buscarPeli()' id='buscarMas' >Buscar todos los resultados</button>");
+        //$('#buscarMas').html("<div><button onclick='buscarPeli()' id='buscarMas' >Buscar todos los resultados</button></div>")
+
         var resultHtml = $("<div><h2>Resultado de busqueda:</h2>");
 
         
@@ -61,7 +63,7 @@ function buscarPeli(){
 
 
             if (diez === data["results"].length){
-                $('#buscarMas').hide();
+                $('#buscarMasa').hide();
             }
 
             titulo = data["results"][i]["title"];
@@ -149,9 +151,13 @@ function buscarPeli(){
             }
   
                 resultHtml.append("</div>");
-                buscarMas.append("</div>");
+                //buscarMas.append("</button>");
                 $("#movies").html(resultHtml);
-                $("#buscarMas").html(buscarMas);
+                $("#buscarMasa").html(buscarMas);
+
+                //$("#buscarMas").show();
+                //document.getElementById('buscarMas').style.display = 'block';
+
 
 
                 diez= data["results"].length;
@@ -308,7 +314,7 @@ function mandarAmigo(id){
     //cuando se elige otra peli, se resetea las pelis que te devuelve y devuelve 10 la primera vez que busca
     $('#submit').click(function(){
         diez = 10;
-        $('#buscarMas').show();  
+        $('#buscarMasa').show();  
         
     });
 
@@ -499,6 +505,8 @@ function showTrendingMovies() {
 }
 
 function showPopularMovies() {
+
+    $('#buscarMas').hide();
 
     $.ajax({
         url: "https://api.themoviedb.org/3/movie/popular?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=es-MX&page=1",

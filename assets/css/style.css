@@ -9,6 +9,7 @@ body {
     padding: 20px;
     margin: 0 auto;
     color:white;
+    display: inline-block;
 }
 
 .movie {
