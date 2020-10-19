@@ -11,6 +11,7 @@ body {
     padding-left: 5%;
     padding-bottom: 5%;
     padding-right: 5%;
+   /* margin-left:2%;*/
 }
 
 .content-cabecera {
@@ -145,7 +146,7 @@ input, select {
 .containerUltimaBusqueda {
    /* position: unset;*/
     float:left;
-    margin-left:5%;
+    margin-left:9%;
     margin-right:5%;
     margin-top:3%;
     width:80%;
@@ -252,7 +253,7 @@ input, select {
 .topRated{
     /* position: unset;*/
     float: left;
-    margin-left: 5%;
+    margin-left: 9%;
     margin-right: 5%;
     margin-top: 3%;
     width: 80%;
@@ -354,7 +355,7 @@ input, select {
 .trendingMovies {
     /* position: unset;*/
     float: left;
-    margin-left: 5%;
+    margin-left: 9%;
     margin-right: 5%;
     margin-top: 3%;
     width: 80%;
@@ -429,7 +430,7 @@ input, select {
 .popularMovies {
     /* position: unset;*/
     float: left;
-    margin-left: 5%;
+    margin-left: 9%;
     margin-right: 5%;
     margin-top: 3%;
     width: 80%;
@@ -502,7 +503,7 @@ input, select {
 .newMovies {
     /* position: unset;*/
     float: left;
-    margin-left: 5%;
+    margin-left: 9%;
     margin-right: 5%;
     margin-top: 3%;
     width: 80%;
@@ -580,13 +581,17 @@ main .colum {
 .container {
     width: 100%;
     margin: 10px;
+    margin-left:4%;
     padding: 5px;
     border-radius: 10px;
     
 }
     .container h2 {
         background-color: #161616;
-        width:95%;
+        margin-left:7%;
+        width:80%;
+        border-radius:1%;
+        font-size:100%;
     }
 .colum {
     
@@ -715,7 +720,7 @@ main .colum {
     
     background-color: rgb(45, 41, 245);
 
-    margin-left: 30%;
+    margin-left: 32%;
     width: 30%;
     border-radius: 4px;
     display: inline-block; 
@@ -884,39 +889,55 @@ footer {
         height: 70px;
     }
 
-
-
-
-}
-
-@media (min-width:768px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-    main .colum {
-        margin-left: 1%;
-        margin-top: 1%;
-    }
-  
-
-    .colum {
-        width: 31.33%;
-        height: 90%;
+    .container h2 {
+        background-color: #161616;
+        margin-left: 7%;
+        width: 78%;
+        border-radius: 1%;
+        font-size: 110%;
     }
 
-        .colum img {
-            width: 100%;
-            max-width: 300px;
-            height: 380px;
-        }
+    #buscarMas {
+       
+        margin-left: 30%;
+    }
 
-        .colum h2 {
-            font-size: 180%;
-            width: 100%;
+    @media (min-width:768px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+        main .colum {
+            margin-left: 1%;
+            margin-top: 1%;
         }
 
 
+        .colum {
+            width: 31.33%;
+            height: 90%;
+        }
+
+            .colum img {
+                width: 100%;
+                max-width: 300px;
+                height: 380px;
+            }
+
+            .colum h2 {
+                font-size: 180%;
+                width: 100%;
+            }
+
+        .container h2 {
+            background-color: #161616;
+            margin-left: 1%;
+            width: 98%;
+            border-radius: 1%;
+            font-size: 110%;
+        }
 
 
-
-
+        #buscarMas {
+            margin-left: 35%;
+        }
+    }
 
 
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
