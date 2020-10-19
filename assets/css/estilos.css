@@ -23,13 +23,15 @@ body {
 
 .content-logo {
    /* background-color: #262ec3;*/
-    width: 40%;
-    height: 40%;
-    position:center;
-  
-    overflow: hidden;
+   width: 40%;
+   height: 40%;
+   position:center;
  
-    margin:auto;
+   overflow: hidden;
+
+   margin:auto;
+
+
 }
 h1{
     margin-left:1%;
@@ -708,20 +710,21 @@ main .colum {
 
 }
 
+
 #buscarMas {
     
     background-color: rgb(45, 41, 245);
 
-    margin-left: 40%;
-    margin-right: 50%;
-    width: 20%;
+    margin-left: 30%;
+    width: 30%;
     border-radius: 4px;
     display: inline-block; 
-    height: 50px;
+    height: 60px;
     font-size: medium;
     color: white;
-}
 
+    
+}
 
 #buscarMas:hover { background-color: rgba(20, 12, 131, 0.329); }
 
@@ -867,7 +870,9 @@ footer {
         width: 15%;
         height: 15%;
         margin-right: 20px;
-        margin-top:2px;
+        
+        margin-left: 40%;
+        margin-right: 50%;
         
     }
 
@@ -878,6 +883,10 @@ footer {
         width: 100%;
         height: 70px;
     }
+
+
+
+
 }
 
 @media (min-width:768px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
@@ -902,6 +911,9 @@ footer {
             font-size: 180%;
             width: 100%;
         }
+
+
+
 
 
 

@@ -287,12 +287,12 @@ function mandarAmigo(id){
                 if (imagen == null){
                     //alert("no tiene imagen")
                     //alert(imagen);
-                    output = '<div id="titulardo"><h3>' + titulo + '</h3></div><br><div><img src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div><br><div id="sinopsilla"><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';                  
+                    output = '<div id="titulardo"><h3>' + titulo + '</h3></div><br><div><img src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"></div><br><div id="sinopsilla"><h3>Sinopsis:<br><br> ' + descripcion + '</h3></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';                  
                 }
 
                 if (imagen != null){
                     //alert("tiene imagen")
-                    output = '<div id="titulardo"><h3>' + titulo + '</h3></div><br><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><br><div id="sinopsilla"><h2>Sinopsis:<br><br> ' + descripcion + '</h2></div><br><div><h3>Puntaje: ' + vote_average + '</h3></div><br><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><br><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';
+                    output = '<div id="titulardo"><h3>' + titulo + '</h3></div><div><img src="https://image.tmdb.org/t/p/w500' + imagen + '"></div><div id="sinopsilla"><h3>Sinopsis: ' + descripcion + '</h3></div><div><h3>Puntaje: ' + vote_average + '</h3></div><div><h3>Lanzamiento: ' + lanzamiento +'</h3></div><div><h3>Idioma original: '+idiomaOriginal+'</h3></div>';
                 }
 
               
