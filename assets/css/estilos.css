@@ -769,17 +769,19 @@ main .colum {
 #idiomas {
     font-size: 110%;
     margin-top: 1%;
+    font-weight: bold;
    
 }
 
 #demo {
     font-size: 110%;
     margin-top: 1%;
- 
+    font-weight: bold;
 }
 #productoras {
     font-size: 110%;
     margin-top: 1%;
+    font-weight: bold;
 }
 #movie img{
     margin-left:15%;
@@ -987,4 +989,3 @@ footer {
         }
     }
 
-  
